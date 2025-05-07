@@ -1,34 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom"
+import Layout from "./components/Layout/Layout"
+import ProtectedRoute from "./components/Auth/ProtectedRoute"
+import Home from "./pages/Home"
+import Login from "./pages/Login"
+import Signup from "./pages/Signup"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
+import Users from "./pages/Users"
+import UserProfile from "./pages/UserProfile"
+import UserEdit from "./pages/UserEdit"
+import ShowFollow from "./pages/ShowFollow"
+import AccountActivations from "./pages/AccountActivations"
+import AccountActivationsNew from "./pages/AccountActivationsNew"
+import PasswordResetsNew from "./pages/PasswordResetsNew"
+import PasswordResets from "./pages/PasswordResets"
+import NotFound from "./pages/NotFound"
+import "./App.css"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+
+        <Route path="users" element={<Users />} />
+        <Route path="users/:id" element={<UserProfile />} />
+        <Route
+          path="users/:id/edit"
+          element={
+            <ProtectedRoute>
+              <UserEdit />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="users/:id/following" element={<ShowFollow type="following" />} />
+        <Route path="users/:id/followers" element={<ShowFollow type="followers" />} />
+
+        <Route path="account_activations/:token/edit" element={<AccountActivations />} />
+        <Route path="account_activations/new" element={<AccountActivationsNew />} />
+        <Route path="password_resets/new" element={<PasswordResetsNew />} />
+        <Route path="password_resets/:token" element={<PasswordResets />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }
 
