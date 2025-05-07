@@ -11,6 +11,7 @@ import MicropostItem from "../components/Micropost/MicropostItem"
 import UserInfo from "../components/User/UserInfo"
 import UserStats from "../components/User/UserStats"
 import { getMicroposts } from "../services/micropostService"
+import reactLogo from "@/assets/react.svg"
 
 const Home = () => {
   const { loggedIn, user } = useSelector((state) => state.session)
@@ -83,7 +84,7 @@ const Home = () => {
         </Link>
         <div className="text-center mt-4">
           <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/react.svg" alt="React logo" width="180" height="38" />
+            <img src={reactLogo} alt="React logo" width="180" height="38" />
           </a>
         </div>
       </div>
