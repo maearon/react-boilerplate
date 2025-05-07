@@ -83,7 +83,7 @@ const Home = () => {
         </Link>
         <div className="text-center mt-4">
           <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
-            <img src="/src/assets/react.svg" alt="React logo" width="180" height="38" />
+            <img src="./assets/react.svg" alt="React logo" width="180" height="38" />
           </a>
         </div>
       </div>
