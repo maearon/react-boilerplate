@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { Form, Button, Card, Row, Col, Alert } from "react-bootstrap"
-import { loginUser } from "../store/sessionSlide"
+import { loginUser } from "../store/sessionSlice"
 import { toast } from "react-toastify"
 
 const Login = () => {

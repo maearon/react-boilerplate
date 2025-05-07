@@ -1,7 +1,12 @@
 import axios from "axios"
 
 // Base API URL
-const BASE_URL = "https://ruby-rails-boilerplate-3s9t.onrender.com/api"
+let BASE_URL = ""
+if (process.env.NODE_ENV === "development") {
+  BASE_URL = "http://localhost:3000/api"
+} else {
+  BASE_URL = "https://ruby-rails-boilerplate-3s9t.onrender.com/api"
+}
 
 // Create axios instance
 const API = axios.create({

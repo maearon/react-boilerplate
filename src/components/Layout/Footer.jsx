@@ -2,24 +2,33 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
-    <footer className="footer mt-5 py-3 bg-light">
+    <footer className="footer mt-auto py-3 bg-light">
       <div className="container text-center">
-        <div className="mb-2">
-          <Link to="/about" className="me-2">
-            About
-          </Link>
-          <Link to="/contact" className="me-2">
-            Contact
-          </Link>
+        <small>
+          The{" "}
           <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
-            News
+            React Tutorial
+          </a>{" "}
+          by{" "}
+          <a href="https://github.com/maearon" target="_blank" rel="noopener noreferrer">
+            maearon
           </a>
-        </div>
-        <div>
-          <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
-            <img src="/react.svg" alt="React logo" width="100" height="30" />
-          </a>
-        </div>
+        </small>
+        <nav className="mt-3">
+          <ul className="list-inline">
+            <li className="list-inline-item">
+              <Link to="/about">About</Link>
+            </li>
+            <li className="list-inline-item">
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li className="list-inline-item">
+              <a href="https://react.dev/blog" target="_blank" rel="noopener noreferrer">
+                News
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </footer>
   )

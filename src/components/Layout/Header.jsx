@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap"
-import { logoutUser } from "../../store/sessionSlide"
+import { logoutUser } from "../../store/sessionSlice"
 import { toast } from "react-toastify"
 
 const Header = () => {
